@@ -15,4 +15,4 @@ RUN apk --update --no-cache add git git-lfs && pip install plumbum
 
 COPY "entrypoint.py" "/entrypoint.py"
 
-ENTRYPOINT ["/entrypoint.py"]
+ENTRYPOINT ["python3", "/entrypoint.py"]
