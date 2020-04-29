@@ -41,7 +41,7 @@ def run():
     add_args.append('-A')
     if files:
         debug(f"Files: {files}")
-        add_args.extend(files.strip("'").split())
+        add_args.extend(files.strip("'").strip('"').split())
     if rebase == 'true':
         debug(git(['pull', '--rebase', '--autostash', 'origin', branch]))
     debug(git(['checkout', '-B', branch]))
